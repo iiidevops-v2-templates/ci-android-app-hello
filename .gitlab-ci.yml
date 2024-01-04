@@ -7,10 +7,10 @@ stages:
 
 include:
   - project: 'iiidevops-templates/ci-template'
-    ref: 'v2.1.5'
+    ref: 'v2.4.1'
     file: 'job/Android.gitlab-ci.yml'
   - project: 'iiidevops-templates/ci-template'
-    ref: 'v2.1.5'
+    ref: 'v2.4.1'
     file: 'ci/template.gitlab-ci.yml'
 
 Test--SonarQube source code scan:
@@ -72,6 +72,8 @@ Deploy--Web:
     iiidevops: deployed-environments
     CHART_WEB_PORT: 80
     CHART_PROXY_BODY_SIZE: 1m
+    CHART_VOLUME_ENABLED: 'false'
+    CHART_VOLUME_PATH: "/usr/src"
   only:
   - skip
 
