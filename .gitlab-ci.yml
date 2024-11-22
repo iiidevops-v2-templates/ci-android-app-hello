@@ -1,9 +1,9 @@
 include:
 - project: iiidevops-templates/ci-template
-  ref: v2.12.3
+  ref: v2.13.0
   file: ci/template.gitlab-ci.yml
-- project: 'iiidevops-templates/ci-template'
-  ref: v2.12.3
+- project: iiidevops-templates/ci-template
+  ref: v2.13.0
   file: 'job/Android.gitlab-ci.yml'
 - local: iiidevops/jobs/*.yml
 
@@ -30,6 +30,10 @@ Test--Semgrep SAST code scan:
 Test--Anchore SBOM source code scan:
   variables:
     iiidevops: anchore-code
+
+Test--Check-CN scan:
+  variables:
+    iiidevops: checkcn
 
 Test--Checkmarx source code scan:
   variables:
