@@ -73,7 +73,7 @@ echo '========== Android SonarQube =========='
 	-Dsonar.projectKey=${CICD_GIT_REPO_NAME} -Dsonar.projectName=${CICD_GIT_REPO_NAME}\
 	-Dsonar.projectVersion=${CICD_GIT_BRANCH}:${CICD_GIT_COMMIT} -Dsonar.androidLint.reportPaths=${PWD}/app/build/reports/lint-results.xml\
 	-Dsonar.log.level=DEBUG -Dsonar.qualitygate.wait=true -Dsonar.qualitygate.timeout=600\
-	-Dsonar.login=$SONAR_TOKEN sonarqube
+	-Dsonar.token=$SONAR_TOKEN sonar
   ```
 
 ## 修改專案支援`Sonarqube`掃描
@@ -84,7 +84,7 @@ buildscript {
 }
 // 這裡Plugin添加Sonarqube
 plugins {
-  id "org.sonarqube" version "3.3"
+  id "org.sonarqube" version "7.5.0.8588"
 }
 // Plugin在其他的之前
 allprojects {
